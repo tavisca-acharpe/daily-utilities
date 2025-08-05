@@ -2,6 +2,6 @@
 {
     public interface IStep
     {
-        Task ExecuteAsync();
+        Task<bool> ExecuteAsync();
     }
 }

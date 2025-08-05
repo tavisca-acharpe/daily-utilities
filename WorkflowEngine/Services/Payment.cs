@@ -4,10 +4,10 @@ namespace WorkflowEngine.Services
 {
     public class Payment : IStep
     {
-        public Task ExecuteAsync()
+        public Task<bool> ExecuteAsync()
         {
             Console.WriteLine("Executing Payment");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }

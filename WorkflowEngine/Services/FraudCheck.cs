@@ -4,10 +4,10 @@ namespace WorkflowEngine.Services
 {
     public class FraudCheck : IStep
     {
-        public Task ExecuteAsync()
+        public Task<bool> ExecuteAsync()
         {
             Console.WriteLine("Executing FraudCheck");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }

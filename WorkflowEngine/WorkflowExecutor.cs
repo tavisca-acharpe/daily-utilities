@@ -18,8 +18,10 @@ public class WorkflowExecutor
 
     public async Task ExecuteWorkflowAsync(string workflowName)
     {
+        //Steps : Get Workflow Configuration for consul/programservice
         var steps = _configuration.GetSection($"Workflows:{workflowName}").Get<List<string>>();
 
+        //excecute workflow 
         foreach (var stepName in steps)
         {
             var stepType = Assembly.GetExecutingAssembly()
@@ -28,7 +30,12 @@ public class WorkflowExecutor
 
 
             var step = (IStep)_serviceProvider.GetRequiredService(stepType);
-            await step.ExecuteAsync();
+            var result = await step.ExecuteAsync();
+
+            if (result == false)
+            {
+                break;
+            }
         }
     }
 }

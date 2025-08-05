@@ -4,10 +4,10 @@ namespace WorkflowEngine.Services
 {
     public class PostBooking : IStep
     {
-        public Task ExecuteAsync()
+        public Task<bool> ExecuteAsync()
         {
             Console.WriteLine("Executing PostBooking");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }

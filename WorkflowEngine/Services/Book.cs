@@ -4,10 +4,10 @@ namespace WorkflowEngine.Services
 {
     public class Book : IStep
     {
-        public Task ExecuteAsync()
+        public Task<bool> ExecuteAsync()
         {
             Console.WriteLine("Executing Book");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }

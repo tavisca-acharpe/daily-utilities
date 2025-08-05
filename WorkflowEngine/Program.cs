@@ -28,10 +28,10 @@ public class Program
                 services.AddSingleton<WorkflowExecutor>();
             })
             .Build();
-
+        
         var executor = host.Services.GetRequiredService<WorkflowExecutor>();
 
         // Run workflow
-        await executor.ExecuteWorkflowAsync("Workflow1");
+        await executor.ExecuteWorkflowAsync("Workflow2");
     }
 }

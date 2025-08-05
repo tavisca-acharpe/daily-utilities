@@ -4,10 +4,10 @@ namespace WorkflowEngine.Services
 {
     public class Cancel : IStep
     {
-        public Task ExecuteAsync()
+        public Task<bool> ExecuteAsync()
         {
             Console.WriteLine("Executing Cancel");
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
     }
 }
