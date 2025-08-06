@@ -24,12 +24,7 @@ public class WorkflowExecutor
         //excecute workflow 
         foreach (var stepName in steps)
         {
-            var stepType = Assembly.GetExecutingAssembly()
-                                   .GetTypes()
-                                   .FirstOrDefault(t => typeof(IStep).IsAssignableFrom(t) && t.Name == stepName);
-
-
-            var step = (IStep)_serviceProvider.GetRequiredService(stepType);
+            var step = GetRequiredService(stepName);
             var result = await step.ExecuteAsync();
 
             if (result == false)
@@ -37,5 +32,30 @@ public class WorkflowExecutor
                 break;
             }
         }
+    }
+
+    private IStep GetRequiredService(string stepName)
+    {
+        if (string.Equals(stepName, "FraudCheck", StringComparison.OrdinalIgnoreCase))
+        {
+            return new FraudCheck();
+        }
+        if (string.Equals(stepName, "Book", StringComparison.OrdinalIgnoreCase))
+        {
+            return new Book();
+        }
+        if (string.Equals(stepName, "Payment", StringComparison.OrdinalIgnoreCase))
+        {
+            return new Payment();
+        }
+        if (string.Equals(stepName, "Cancel", StringComparison.OrdinalIgnoreCase))
+        {
+            return new Cancel();
+        }
+        if (string.Equals(stepName, "PostBooking", StringComparison.OrdinalIgnoreCase))
+        {
+            return new PostBooking();
+        }
+        return null;
     }
 }

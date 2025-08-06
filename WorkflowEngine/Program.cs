@@ -8,7 +8,6 @@ public class Program
 {
     public static async Task Main(string[] args)
     {
-
         using IHost host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((context, configBuilder) =>
             {
