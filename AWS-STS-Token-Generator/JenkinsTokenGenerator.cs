@@ -29,8 +29,8 @@ namespace AWS_STS_Token_Generator
         {
             string jenkinsUrl = "https://jenkins.common.cnxloyalty.com/job/App-NGOS/job/DataMigration/job/";
             string jobName = "AWS-STS-Token";
-            string username = "i759407@cxloyaltycorp.com";
-            string apiToken = "AKCpBtMUnryWDiSLsVV3wg8nSmykk18SUhogFyVRSrrodVLRwWLwk8CzfY7UvRdPL7qt1TKAh";
+            string username = "name";
+            string apiToken = "token";
 
             var client = new JenkinsTokenGenerator(jenkinsUrl, jobName, username, apiToken);
             await client.TriggerJobAndReadConsoleAsync();

@@ -4,6 +4,27 @@
     {
         public static void TestingChanges()
         {
+            var latestBookings = new List<Order> {
+            new Order() { Id = "123", Index = 8, ItemIds = new List<string>() { "123", "345"} },
+            new Order() { Id = "456", Index = 9, ItemIds = new List<string>() { "123", "345"} } ,
+            new Order() { Id = "789", Index = 100 },
+            new Order() { Id = "", Index = 101 },
+            new Order() { Id = "", Index = 102},
+            new Order() { Id = "789", Index = 103 },
+            new Order() { Id = "789", Index = 104 } };
+
+            var ngSorcCreateOrder = new List<Order> {
+            new Order() { Id = "123", Index = 8, ItemIds = new List<string>() { "123", "345"} },
+            new Order() { Id = "456", Index = 9, ItemIds = new List<string>() { "123", "345"} } };
+
+            var missingOrders = latestBookings?.Where(o1 => !ngSorcCreateOrder.Any(o2 => o2.Id == o1.Id))?.ToList();
+
+
+            if (missingOrders.Any())
+            {
+
+            }
+
             var order = new List<Order> {
             new Order() { Id = "123", Index = 8, ItemIds = new List<string>() { "123", "345"} },
             new Order() { Id = "456", Index = 9, ItemIds = new List<string>() { "123", "345"} } ,

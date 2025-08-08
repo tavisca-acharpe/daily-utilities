@@ -8,8 +8,8 @@ namespace AWS_STS_Token_Generator
     {
         public static AmazonSecurityTokenServiceClient AwsTokenGenerator()
         {
-            string roleArn = "arn:aws:iam::346319152574:role/qa-taas-sts-role";
-            string sessionName = "TemporarySessionKeys ";
+            var roleArn = "arn:aws:iam::346319152574:role/qa-taas-sts-role";
+            var sessionName = "TemporarySessionKeys";
             var stsClient = new AmazonSecurityTokenServiceClient();
 
             try

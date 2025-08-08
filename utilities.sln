@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWS-STS-Token-Generator", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File-Formatter", "File-Formatter\File-Formatter.csproj", "{486DF97F-6D4F-49D4-A828-09888B970326}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowEngine", "WorkflowEngine\WorkflowEngine.csproj", "{886A8390-D767-4A7F-A51F-A99EA1377886}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{486DF97F-6D4F-49D4-A828-09888B970326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{486DF97F-6D4F-49D4-A828-09888B970326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{486DF97F-6D4F-49D4-A828-09888B970326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{886A8390-D767-4A7F-A51F-A99EA1377886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886A8390-D767-4A7F-A51F-A99EA1377886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886A8390-D767-4A7F-A51F-A99EA1377886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886A8390-D767-4A7F-A51F-A99EA1377886}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
