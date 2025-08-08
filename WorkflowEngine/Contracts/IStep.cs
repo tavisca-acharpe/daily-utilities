@@ -1,7 +1,9 @@
-﻿namespace WorkflowEngine.Contracts
+﻿using WorkflowEngine.Models;
+
+namespace WorkflowEngine.Contracts
 {
     public interface IStep
     {
-        Task<bool> ExecuteAsync();
+        Task<(OrderPayload, bool)> ExecuteAsync(OrderPayload orderPayload);
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
+using WorkflowEngine.Models;
 using WorkflowEngine.Services;
 
 public class Program
@@ -32,12 +33,13 @@ public class Program
 
         while (true)
         { 
-            Console.Write("\nEnter workflow name  :  ");
+            Console.Write("\n\nEnter workflow name  :  ");
             var workflowName = Console.ReadLine();
-
+            Console.Write("\n");
+            var orderPaylaod = new OrderPayload() { WorkflowName = workflowName };
             // Run workflow
-            await executor.ExecuteWorkflowAsync(workflowName);
-            Console.Write("Execution Completed for " + workflowName);
+            await executor.ProcessFunctionalityAsync(orderPaylaod);
+            Console.Write("\nExecution Completed for " + workflowName);
         }
         Console.ReadLine();
     }

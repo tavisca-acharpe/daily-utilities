@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
-using WorkflowEngine.Contracts;
-using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+using WorkflowEngine.Contracts;
+using WorkflowEngine.Models;
 
 namespace WorkflowEngine.Services;
 
@@ -16,21 +17,22 @@ public class WorkflowExecutor
         _configuration = configuration;
     }
 
-    public async Task ExecuteWorkflowAsync(string workflowName)
+    public async Task ProcessFunctionalityAsync(OrderPayload orderPayload)
     {
         //Steps : Get Workflow Configuration for consul/programservice
-        var steps = _configuration.GetSection($"Workflows:{workflowName}").Get<List<string>>();
+        var steps = _configuration.GetSection($"Workflows:{orderPayload.WorkflowName}").Get<List<string>>();
 
         //excecute workflow 
         foreach (var stepName in steps)
         {
             var step = GetRequiredService(stepName);
-            var result = await step.ExecuteAsync();
+            var (payload, result) = await step.ExecuteAsync(new Models.OrderPayload());
 
             if (result == false)
             {
                 break;
             }
+            orderPayload = payload;
         }
     }
 

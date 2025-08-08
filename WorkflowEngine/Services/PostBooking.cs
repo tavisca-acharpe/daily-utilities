@@ -1,13 +1,14 @@
 ﻿using WorkflowEngine.Contracts;
+using WorkflowEngine.Models;
 
 namespace WorkflowEngine.Services
 {
     public class PostBooking : IStep
     {
-        public Task<bool> ExecuteAsync()
+        public Task<(OrderPayload, bool)> ExecuteAsync(OrderPayload orderPayload)
         {
             Console.WriteLine("Executing PostBooking");
-            return Task.FromResult(true);
+            return Task.FromResult((orderPayload, true));
         }
     }
 }
