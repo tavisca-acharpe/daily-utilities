@@ -1,1 +1,32 @@
-﻿Add Your Jenkins Output
+﻿Started by user I759407@cxloyaltycorp.com
+Running as SYSTEM
+[EnvInject] - Loading node environment variables.
+Building on the built-in node in workspace /jenkins_home/jenkins/workspace/App-NGOS/DataMigration/AWS-STS-Token
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+[AWS-STS-Token] $ /bin/sh -xe /tmp/jenkins16699925052246515509.sh
++ pwd
+/jenkins_home/jenkins/workspace/App-NGOS/DataMigration/AWS-STS-Token
++ aws sts assume-role --role-arn arn:aws:iam::346319152574:role/qa-taas-sts-role --role-session-name TemporarySessionKeys --duration-seconds 14400 --output json
+++ jq .Credentials.AccessKeyId assume-role-output.json
++ AWS_ACCESS_KEY_ID='"ASIAVBIR24W7KGANHLME"'
+++ jq .Credentials.SecretAccessKey assume-role-output.json
++ AWS_SECRET_ACCESS_KEY='"hslui2u55kNI6QBXWVMMl7iaDutFxqGpjpsyEtuh"'
+++ jq .Credentials.SessionToken assume-role-output.json
++ AWS_SESSION_TOKEN='"IQoJb3JpZ2luX2VjEGwaCXVzLWVhc3QtMSJGMEQCIDQKd4zuXw5E4hxY0pimIwpfNbpWbXVX2xjiJbR2BY/cAiBRP/GTnoXup1itnGrlBsU/AVTzsqY59ESH2CB35lS5ISqqAgil//////////8BEAMaDDM0NjMxOTE1MjU3NCIM1VfsOZ7UdE9Kd9YeKv4BYJihdZ8BCkhz2X0lwHDZERwFJl93SEGCVw2F1snJ+ctvc/n2oaPJJHlYAsITx9Ad7DMAECZf45Y7fsSvXqLEw/J5HjZswcJ86f1+cAqNGDBe8Tq79hQ7XQjWY3EZy13JHoADB60ModQ4q5M/eJJ3g1v/oTuVZT3Ao6Es9xVUn4u2GQ0qtBf6wnjqPw8O5TN7PGtwrPqYaA/eRP1+/e/2d4e3Y49mWy/RDMKI9NcAotobzeVqAVcbO3Y5aPvcCBSK7wmKhyHJuKN2xAtX9oWJaUlLrlbx+yUCFQeEC1Ls0nXcAhY+lrKXPxEgkm660PNXrq3DSptht5WR621UTGIw/MPXxAY6ngFja6I22QRdvZmAuh04jydD/sM15z55ZDWEgylnC4TkY2Yd4aJbXR0FnjYbttdUzwpaaxN8ioixnw4c272WYEwbfvWj/SvMRRDgMPNBeVnHDc3FIo8mFXEue7rvsThIP1+ZqbpaXuvgNasjI6FkpmYModqvnecVpnz9xlri8Hje12CwE4PWPPTdwDdnx8jmB62Kf2fquNle2QeiaaWgQA=="'
+++ jq .Credentials.AccessKeyId assume-role-output.json
++ echo 'SET AWS_ACCESS_KEY_ID="ASIAVBIR24W7KGANHLME"'
+SET AWS_ACCESS_KEY_ID="ASIAVBIR24W7KGANHLME"
+++ jq .Credentials.SecretAccessKey assume-role-output.json
++ echo 'SET AWS_SECRET_ACCESS_KEY="hslui2u55kNI6QBXWVMMl7iaDutFxqGpjpsyEtuh"'
+SET AWS_SECRET_ACCESS_KEY="hslui2u55kNI6QBXWVMMl7iaDutFxqGpjpsyEtuh"
+++ jq .Credentials.SessionToken assume-role-output.json
++ echo 'SET AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEGwaCXVzLWVhc3QtMSJGMEQCIDQKd4zuXw5E4hxY0pimIwpfNbpWbXVX2xjiJbR2BY/cAiBRP/GTnoXup1itnGrlBsU/AVTzsqY59ESH2CB35lS5ISqqAgil//////////8BEAMaDDM0NjMxOTE1MjU3NCIM1VfsOZ7UdE9Kd9YeKv4BYJihdZ8BCkhz2X0lwHDZERwFJl93SEGCVw2F1snJ+ctvc/n2oaPJJHlYAsITx9Ad7DMAECZf45Y7fsSvXqLEw/J5HjZswcJ86f1+cAqNGDBe8Tq79hQ7XQjWY3EZy13JHoADB60ModQ4q5M/eJJ3g1v/oTuVZT3Ao6Es9xVUn4u2GQ0qtBf6wnjqPw8O5TN7PGtwrPqYaA/eRP1+/e/2d4e3Y49mWy/RDMKI9NcAotobzeVqAVcbO3Y5aPvcCBSK7wmKhyHJuKN2xAtX9oWJaUlLrlbx+yUCFQeEC1Ls0nXcAhY+lrKXPxEgkm660PNXrq3DSptht5WR621UTGIw/MPXxAY6ngFja6I22QRdvZmAuh04jydD/sM15z55ZDWEgylnC4TkY2Yd4aJbXR0FnjYbttdUzwpaaxN8ioixnw4c272WYEwbfvWj/SvMRRDgMPNBeVnHDc3FIo8mFXEue7rvsThIP1+ZqbpaXuvgNasjI6FkpmYModqvnecVpnz9xlri8Hje12CwE4PWPPTdwDdnx8jmB62Kf2fquNle2QeiaaWgQA=="'
+SET AWS_SESSION_TOKEN="IQoJb3JpZ2luX2VjEGwaCXVzLWVhc3QtMSJGMEQCIDQKd4zuXw5E4hxY0pimIwpfNbpWbXVX2xjiJbR2BY/cAiBRP/GTnoXup1itnGrlBsU/AVTzsqY59ESH2CB35lS5ISqqAgil//////////8BEAMaDDM0NjMxOTE1MjU3NCIM1VfsOZ7UdE9Kd9YeKv4BYJihdZ8BCkhz2X0lwHDZERwFJl93SEGCVw2F1snJ+ctvc/n2oaPJJHlYAsITx9Ad7DMAECZf45Y7fsSvXqLEw/J5HjZswcJ86f1+cAqNGDBe8Tq79hQ7XQjWY3EZy13JHoADB60ModQ4q5M/eJJ3g1v/oTuVZT3Ao6Es9xVUn4u2GQ0qtBf6wnjqPw8O5TN7PGtwrPqYaA/eRP1+/e/2d4e3Y49mWy/RDMKI9NcAotobzeVqAVcbO3Y5aPvcCBSK7wmKhyHJuKN2xAtX9oWJaUlLrlbx+yUCFQeEC1Ls0nXcAhY+lrKXPxEgkm660PNXrq3DSptht5WR621UTGIw/MPXxAY6ngFja6I22QRdvZmAuh04jydD/sM15z55ZDWEgylnC4TkY2Yd4aJbXR0FnjYbttdUzwpaaxN8ioixnw4c272WYEwbfvWj/SvMRRDgMPNBeVnHDc3FIo8mFXEue7rvsThIP1+ZqbpaXuvgNasjI6FkpmYModqvnecVpnz9xlri8Hje12CwE4PWPPTdwDdnx8jmB62Kf2fquNle2QeiaaWgQA=="
+Archiving artifacts
+Started calculate disk usage of build
+Finished Calculation of disk usage of build in 0 seconds
+Started calculate disk usage of workspace
+Finished Calculation of disk usage of workspace in 0 seconds
+Finished: SUCCESS

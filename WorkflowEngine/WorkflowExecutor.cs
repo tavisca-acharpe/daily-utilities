@@ -10,29 +10,49 @@ public class WorkflowExecutor
 {
     private readonly IServiceProvider _serviceProvider;
     private readonly IConfiguration _configuration;
+    private readonly IAuth _authService;
+    private readonly IBook _bookService;
+    private readonly ICapture _captureService;
 
-    public WorkflowExecutor(IServiceProvider serviceProvider, IConfiguration configuration)
+    public WorkflowExecutor(IServiceProvider serviceProvider, IConfiguration configuration, IAuth auth, IBook book, ICapture capture)
     {
         _serviceProvider = serviceProvider;
         _configuration = configuration;
+        _authService = auth;
+        _bookService = book;
+        _captureService = capture;
     }
 
     public async Task ProcessFunctionalityAsync(OrderPayload orderPayload)
     {
-        //Steps : Get Workflow Configuration for consul/programservice
-        var steps = _configuration.GetSection($"Workflows:{orderPayload.WorkflowName}").Get<List<string>>();
+        var enabledWorkflow = true;
 
-        //excecute workflow 
-        foreach (var stepName in steps)
+        if (enabledWorkflow)
         {
-            var step = GetRequiredService(stepName);
-            var (payload, result) = await step.ExecuteAsync(new Models.OrderPayload());
+            //Steps : Get Workflow Configuration for consul/programservice
+            var steps = _configuration.GetSection($"Workflows:{orderPayload.WorkflowName}").Get<List<string>>();
 
-            if (result == false)
+            //excecute workflow 
+            foreach (var stepName in steps)
             {
-                break;
+                var step = GetRequiredService(stepName);
+                var (payload, result) = await step.ExecuteAsync(new Models.OrderPayload());
+
+                if (result == false)
+                {
+                    break;
+                }
+                orderPayload = payload;
             }
-            orderPayload = payload;
+        }
+        else
+        {
+            var (payload, authResult) = await _authService.ExecuteAsync(orderPayload);
+            if (authResult == true)
+            {
+                var (bookPayload, bookResult) = await _bookService.ExecuteAsync(orderPayload);
+                var (capturePayload, captureResult) = await _captureService.ExecuteAsync(orderPayload);
+            }
         }
     }
 
@@ -44,11 +64,11 @@ public class WorkflowExecutor
         }
         if (string.Equals(stepName, "Book", StringComparison.OrdinalIgnoreCase))
         {
-            return new Book();
+            return new BookService();
         }
         if (string.Equals(stepName, "Payment", StringComparison.OrdinalIgnoreCase))
         {
-            return new Payment();
+            return new AuthService();
         }
         if (string.Equals(stepName, "Cancel", StringComparison.OrdinalIgnoreCase))
         {

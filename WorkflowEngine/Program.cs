@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
+using WorkflowEngine.Contracts;
 using WorkflowEngine.Models;
 using WorkflowEngine.Services;
 
@@ -17,12 +18,18 @@ public class Program
             })
             .ConfigureServices((context, services) =>
             {
+                // existing
+                services.AddTransient<IAuth, AuthService>();
+                services.AddTransient<IBook, BookService>();
+                services.AddTransient<ICapture, CaptureService>();
+
                 // Register step implementations
                 services.AddTransient<FraudCheck>();
-                services.AddTransient<Payment>();
+                services.AddTransient<AuthService>();
                 services.AddTransient<Cancel>();
-                services.AddTransient<Book>();
+                services.AddTransient<BookService>();
                 services.AddTransient<PostBooking>();
+
 
                 // Register the executor
                 services.AddSingleton<WorkflowExecutor>();

@@ -3,11 +3,11 @@ using WorkflowEngine.Models;
 
 namespace WorkflowEngine.Services
 {
-    public class Book : IStep
+    public class CaptureService : ICapture, IStep
     {
         public Task<(OrderPayload, bool)> ExecuteAsync(OrderPayload orderPayload)
         {
-            Console.WriteLine("Executing Book");
+            Console.WriteLine("Executing Capture Service");
             return Task.FromResult((orderPayload, true));
         }
     }
