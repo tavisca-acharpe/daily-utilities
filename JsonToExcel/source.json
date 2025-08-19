@@ -1,0 +1,1953 @@
+﻿{
+  "schemaChanges": {
+    "addSchema": [
+      {
+        "type": "Schema",
+        "name": "order",
+        "description": "order information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "organizationId",
+            "valueType": "String",
+            "description": "organization Identifier",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "status",
+            "valueType": "String",
+            "description": "it is the status of order such as Draft, InProgress, Completed, CompletedWithFailure, Failed, Cancelled, PartiallyCancelled",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "paymentState",
+            "valueType": "String",
+            "description": "The payment state of the order such as Pending, PartiallyPaid, FullyPaid, PendingRefund, PartiallyRefunded, FullyRefunded",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "source",
+            "valueType": "String",
+            "description": "The source from which order was created such as ORXe2, ORXe3, MAUI, CAPI, LG, External",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "displayPrice",
+            "valueType": "Json",
+            "description": "Contains the displayPrice object from the order creation request",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "lastUpdatedBy",
+            "valueType": "String",
+            "description": "AccountId of user who recently updated order",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "person",
+        "description": "Customer/Creator/Consumer information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type of person like creator,customer and consumer",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "ageGroupType",
+            "valueType": "String",
+            "description": "ageGroupType of person like Adult, Child",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "title",
+            "valueType": "String",
+            "description": "name title",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "firstName",
+            "valueType": "String",
+            "description": "first name",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "middleName",
+            "valueType": "String",
+            "description": "middle name",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "lastName",
+            "valueType": "String",
+            "description": "last name",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "suffix",
+            "valueType": "String",
+            "description": "suffix",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "accountId",
+            "valueType": "String",
+            "description": "accountId of person",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "membership_info"
+          },
+          {
+            "name": "userId",
+            "valueType": "String",
+            "description": "userId of person",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "membership_info"
+          },
+          {
+            "name": "email",
+            "valueType": "String",
+            "description": "person email",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "contact_info"
+          },
+          {
+            "name": "address",
+            "valueType": "Json",
+            "description": "person address information",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "address_info"
+          },
+          {
+            "name": "sanctionScreening",
+            "valueType": "Json",
+            "description": "sanction screening information",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "behavioral_info"
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "contactDetail",
+        "description": "contact details of user",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+        "category": "contact_info",
+
+        "properties": [
+          {
+            "name": "phoneType",
+            "valueType": "String",
+            "description": "type of phone like unknown | mobile | work| home | fax",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true
+          },
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type of phone such as primary | secondary",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "number",
+            "valueType": "String",
+            "description": "phone number of user",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true
+          },
+          {
+            "name": "countryCode",
+            "valueType": "String",
+            "description": "country code for user phone",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true
+          },
+          {
+            "name": "areaCode",
+            "valueType": "String",
+            "description": "areaCode for user phone",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true
+          }
+        ]
+      },
+      {
+        "Type": "schema",
+        "Name": "costAdjustment",
+        "Description": "Cost adjustments like Fees, Offers and any other Adjustments",
+        "isSystemType": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+        "properties": [
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type is Fee | Offer | Adjustment",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "subType",
+            "valueType": "String",
+            "description": "subType of Fee/Offer/Adjustment - OrderLevelFee, PromoCode, FeeWaiver etc.",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "operationType",
+            "valueType": "String",
+            "description": "Debit or Credit from a customer stand-point",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "cash",
+            "valueType": "Decimal",
+            "description": "cash amount of fee,offer and adjustment",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "points",
+            "valueType": "Decimal",
+            "description": "points of fee,offer and adjustment",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "code",
+            "valueType": "String",
+            "description": "offer/Promo code like Hotel15",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "description",
+            "valueType": "String",
+            "description": "adjustment description",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false
+          },
+          {
+            "name": "collectedBy",
+            "valueType": "String",
+            "description": "collected from such as Client | Agency | Customer",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "offerId",
+            "valueType": "String",
+            "description": "Offer Id in case cost adjustment is of type offer/promo",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "name",
+            "valueType": "String",
+            "description": "Offer name in case cost adjustment is of type offer/promo",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true
+          },
+          {
+            "name": "offerType",
+            "valueType": "String",
+            "description": "Offer type to indicate if offer is applied or order/component",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "currency",
+            "valueType": "String",
+            "description": "Currency of cash component included in offer",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsCurrency",
+            "valueType": "String",
+            "description": "Currency of points component included in offer",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "currencyCostFactor",
+            "valueType": "Json",
+            "description": "Currency cost factor to convert points to its equivalent cash amount",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsBreakup",
+            "valueType": "Json",
+            "description": "Contains pointsBreakup of consuming points with different currencyCostFactor",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsCashEquivalent",
+            "valueType": "Json",
+            "description": "Contains cash equivalent of points being consumed",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "note",
+        "description": "order note information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "createdBy",
+            "valueType": "String",
+            "description": "id/code of the user who created the code",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type of notes such as :- System | Agent | Customer",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "text",
+            "valueType": "String",
+            "description": "text entered by the creator",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "item",
+        "description": "Order item Information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "productOrderId",
+            "valueType": "String",
+            "description": "NextGen product order id  received from the products",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "productItemId",
+            "valueType": "String",
+            "description": "NextGen item id provided by the product engines",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "bundleId",
+            "valueType": "String",
+            "description": "bundleId",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "it is the type of item such as Hotel, Car, Flight, Activity, Insurance, Cruise and Tour",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "name",
+            "valueType": "String",
+            "description": "name of item",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "status",
+            "valueType": "String",
+            "description": "status of item such as Pending, Completed, Failed, Cancelled",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "addOnProductItemIds",
+            "valueType": "String",
+            "description": "list ids of addonitems(like insurance etc)",
+            "isMandatory": false,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "consumptionStartDate",
+            "valueType": "DateTime",
+            "description": "consumptionStartDate associated with item",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "consumptionEndDate",
+            "valueType": "DateTime",
+            "description": "consumptionEndDate associated with item",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "price",
+            "valueType": "Json",
+            "description": "price of item",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "paymentOptions",
+            "valueType": "Json",
+            "description": "item payment breakup",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "supplierName",
+            "valueType": "String",
+            "description": "name of supplier",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "supplierCode",
+            "valueType": "String",
+            "description": "code of supplier",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "vendorName",
+            "valueType": "String",
+            "description": "name of vendor",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "vendorCode",
+            "valueType": "String",
+            "description": "code of vendor",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "cancelledBy",
+            "valueType": "String",
+            "description": "AccountId of user who cancelled order",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "cancelledOn",
+            "valueType": "DateTime",
+            "description": "The DateTime at which the Cancellation operation was performed",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "lastUpdatedBy",
+            "valueType": "String",
+            "description": "AccountId of user who recently updated order",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "earning",
+        "description": "earning information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type in earning",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "description",
+            "valueType": "String",
+            "description": "description of earning",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "cash",
+            "valueType": "Decimal",
+            "description": "earnings cash",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "cashCurrency",
+            "valueType": "String",
+            "description": "earnings cash/amount Currency like a USD",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "points",
+            "valueType": "Decimal",
+            "description": "earnings in points",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "pointsCurrency",
+            "valueType": "String",
+            "description": "earnings points currency like a point, miles",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "pointsBreakup",
+            "valueType": "Json",
+            "description": "Contains pointsBreakup of consuming points with different currencyCostFactor",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "pointsCashEquivalent",
+            "valueType": "Json",
+            "description": "Contains cash equivalent of points being consumed",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "supplierRate",
+        "description": "supplier rate information of item",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "cash",
+            "valueType": "Decimal",
+            "description": "cash amount of supplier",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "currency",
+            "valueType": "String",
+            "description": "supplier cash/amount Currency",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "exchangeRate",
+            "valueType": "Decimal",
+            "description": "ExchangeRate of supplier",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "paymentMode",
+            "valueType": "String",
+            "description": "mode of payment to the supplier such as Deposit | VirtualCard | CustomerCard",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "price",
+            "valueType": "Json",
+            "description": "the price breakup received by the supplier",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "searchOrder",
+        "description": "order index field information",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "orderId",
+            "valueType": "String",
+            "description": "it is id of order",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "trackingId",
+            "valueType": "String",
+            "description": "it is a confirmation number | SPNR",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "classicOrderId",
+            "valueType": "String",
+            "description": "classic order id",
+            "isMandatory": false,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "travelPlanLocator",
+            "valueType": "String",
+            "description": "travel plan locator for chase | tripId",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "paymentId",
+            "valueType": "String",
+            "description": "paymentId returned by the payment service",
+            "isMandatory": false,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "customerUserId",
+            "valueType": "String",
+            "description": "user id of customer",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "membership_info"
+          },
+          {
+            "name": "customerAccountId",
+            "valueType": "String",
+            "description": "cutomer account number",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "membership_info"
+          },
+          {
+            "name": "orderStatus",
+            "valueType": "String",
+            "description": "it is status of order",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "source",
+            "valueType": "String",
+            "description": "order source",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "email",
+            "valueType": "String",
+            "description": "it is email of person",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "contact_info"
+          },
+          {
+            "name": "phoneNumber",
+            "valueType": "String",
+            "description": "phone number of user",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "contact_info"
+          },
+          {
+            "name": "orderCreatedDate",
+            "valueType": "DateTime",
+            "description": "order creation date",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "consumerFirstNames",
+            "valueType": "String",
+            "description": "consumer first names",
+            "isMandatory": true,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "consumerLastNames",
+            "valueType": "String",
+            "description": "consumer last names",
+            "isMandatory": true,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": true,
+            "isBusinessCritical": true,
+            "category": "name_info"
+          },
+          {
+            "name": "paymentStatus",
+            "valueType": "String",
+            "description": "payment status of an order",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "confirmationNumbers",
+            "valueType": "String",
+            "description": "confirmation or cancellation numbers from products",
+            "isMandatory": false,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "travcomInvoiceNumbers",
+            "valueType": "String",
+            "description": "shell invoice numbers generated in travcomm",
+            "isMandatory": false,
+            "isMultiValue": true,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "offerId",
+            "valueType": "String",
+            "description": "OfferId associated with order",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "clientOrder",
+        "description": "Client Order (SORC) Details",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "clientOrderId",
+            "valueType": "String",
+            "description": "it is id of sorc",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "clientOrderCreatedOn",
+            "valueType": "DateTime",
+            "description": "client order creation date",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "clientOrderCancelledOn",
+            "valueType": "DateTime",
+            "description": "client order cancellation date",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "customFields",
+            "valueType": "JSON",
+            "description": "list of key value pair of different client details",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "confirmationNumber",
+        "description": "confirmation and cancellation number details",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+        "properties": [
+          {
+            "name": "number",
+            "valueType": "String",
+            "description": "confirmation number from products",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "type",
+            "valueType": "String",
+            "description": "type can be vendor or supplier",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": true,
+            "category": "commercial_information"
+          },
+          {
+            "name": "for",
+            "valueType": "String",
+            "description": "it will be either cancellation or confirmation",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "cancellationCost",
+        "description": "Break-up of waivers provided by an Agent associate with cancellation and non-refundable penalties and charges",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "type",
+            "valueType": "string",
+            "description": "type of cancellation cost",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "cancellationCostType",
+            "valueType": "string",
+            "description": "type of cancellation cost waiver or deduction",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "description",
+            "valueType": "string",
+            "description": "cancellation cost description",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "cash",
+            "valueType": "decimal",
+            "description": "amount to be waived off or deduct",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "currency",
+            "valueType": "string",
+            "description": "cash/amount Currency like a USD",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "points",
+            "valueType": "decimal",
+            "description": "points to be waived off or deduct",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsCurrency",
+            "valueType": "string",
+            "description": "points currency like a point, miles",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "currencyCostFactor",
+            "valueType": "Json",
+            "description": "Currency cost factor to convert points to its equivalent cash amount",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsBreakup",
+            "valueType": "Json",
+            "description": "Contains pointsBreakup of consuming points with different currencyCostFactor",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "pointsCashEquivalent",
+            "valueType": "Json",
+            "description": "Contains cash equivalent of points being consumed",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": true,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+        ]
+      },
+      {
+        "type": "Schema",
+        "name": "error",
+        "description": "Order failure reasons",
+        "isSystemType": false,
+        "isBusinessCritical": false,
+        "isPIIData": false,
+        "isEncrypted": false,
+        "doNotIndex": false,
+
+        "properties": [
+          {
+            "name": "source",
+            "valueType": "String",
+            "description": "Name of the service which have has returned error",
+            "isMandatory": true,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "code",
+            "valueType": "String",
+            "description": "Error code",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "message",
+            "valueType": "string",
+            "description": "Error message returned by service",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "errorInfo",
+            "valueType": "JSON",
+            "description": "Additional error information",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          },
+          {
+            "name": "category",
+            "valueType": "string",
+            "description": "Contains category of error",
+            "isMandatory": false,
+            "isMultiValue": false,
+            "isSystemType": false,
+            "doNotIndex": false,
+            "isDeleted": false,
+            "isEncrypted": false,
+            "isPIIData": false,
+            "isBusinessCritical": false
+          }
+
+        ]
+      }
+    ]
+  },
+  "relationChanges": {
+    "addRelation": [
+      {
+        "type": "Relation",
+        "name": "orderPerson",
+        "description": "order has person",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "multiplicity": "1",
+          "alias": "order"
+        },
+        "out": {
+          "name": "person",
+          "multiplicity": "*",
+          "alias": "people"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "personContactDetail",
+        "description": "person and contactDetail",
+
+        "isSystemType": false,
+        "in": {
+          "name": "person",
+          "multiplicity": "1",
+          "alias": "person"
+        },
+        "out": {
+          "name": "contactDetail",
+          "multiplicity": "*",
+          "alias": "contactDetails"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderCostAdjustment",
+        "description": "Order may have multiple order level adjustments - fees, offers and adjustments",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "alias": "order",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "costAdjustment",
+          "multiplicity": "*",
+          "alias": "costAdjustments"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderNote",
+        "description": "order has note",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "multiplicity": "1",
+          "alias": "order"
+        },
+        "out": {
+          "name": "note",
+          "multiplicity": "*",
+          "alias": "notes"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderItem",
+        "description": "order has item",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "multiplicity": "1",
+          "alias": "order"
+        },
+        "out": {
+          "name": "item",
+          "multiplicity": "*",
+          "alias": "items"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemPerson",
+        "description": "item has person",
+
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "multiplicity": "1",
+          "alias": "item"
+        },
+        "out": {
+          "name": "person",
+          "multiplicity": "*",
+          "alias": "people"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemEarning",
+        "description": "item has earning",
+
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "multiplicity": "1",
+          "alias": "item"
+        },
+        "out": {
+          "name": "earning",
+          "multiplicity": "*",
+          "alias": "earnings"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemCostAdjustment",
+        "description": "Order may have multiple Item level adjustments - fees, offers and adjustments",
+
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "alias": "item",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "costAdjustment",
+          "multiplicity": "*",
+          "alias": "costAdjustments"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemSupplierRate",
+        "description": "item has supplierRate",
+
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "multiplicity": "1",
+          "alias": "item"
+        },
+        "out": {
+          "name": "supplierRate",
+          "multiplicity": "1",
+          "alias": "supplierRate"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderSearch",
+        "description": "order and searchOrder",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "alias": "order",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "searchOrder",
+          "alias": "searchOrders",
+          "multiplicity": "*"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderClientOrder",
+        "description": "order and clientOrder",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "alias": "order",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "clientOrder",
+          "alias": "clientOrders",
+          "multiplicity": "*"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemConfirmationNumber",
+        "description": "item has its ConfirmationNumber",
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "multiplicity": "1",
+          "alias": "item"
+        },
+        "out": {
+          "name": "confirmationNumber",
+          "multiplicity": "*",
+          "alias": "confirmationNumbers"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderCancellationCost",
+        "description": "order and CancellationCost",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "alias": "order",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "cancellationCost",
+          "alias": "cancellationCosts",
+          "multiplicity": "*"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "itemCancellationCost",
+        "description": "Item and CancellationCost",
+
+        "isSystemType": false,
+        "in": {
+          "name": "item",
+          "alias": "item",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "cancellationCost",
+          "alias": "cancellationCosts",
+          "multiplicity": "*"
+        }
+      },
+      {
+        "type": "Relation",
+        "name": "orderErrors",
+        "description": "order and failure reasons",
+
+        "isSystemType": false,
+        "in": {
+          "name": "order",
+          "alias": "order",
+          "multiplicity": "1"
+        },
+        "out": {
+          "name": "error",
+          "alias": "errors",
+          "multiplicity": "*"
+        }
+      }
+    ]
+  }
+}

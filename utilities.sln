@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File-Formatter", "File-Form
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowEngine", "WorkflowEngine\WorkflowEngine.csproj", "{886A8390-D767-4A7F-A51F-A99EA1377886}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonToExcel", "JsonToExcel\JsonToExcel.csproj", "{55C08F5A-6896-4A4B-823A-253C9BC39258}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{886A8390-D767-4A7F-A51F-A99EA1377886}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886A8390-D767-4A7F-A51F-A99EA1377886}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886A8390-D767-4A7F-A51F-A99EA1377886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55C08F5A-6896-4A4B-823A-253C9BC39258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C08F5A-6896-4A4B-823A-253C9BC39258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C08F5A-6896-4A4B-823A-253C9BC39258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C08F5A-6896-4A4B-823A-253C9BC39258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
